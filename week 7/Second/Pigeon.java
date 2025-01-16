@@ -58,7 +58,7 @@ public class Pigeon extends Bird {
 
     @Override
     public String toString() {
-        return "Pigeon " + getWeight() + " kg and " + getHeight() + " cm. There are " + numberOfPigeon + " pigeons.";
+        return "Pigeon " + getWeight() + " kg and " + " " + getHeight() + " cm. There are " + numberOfPigeon + " pigeons.";
     }
 
 }
