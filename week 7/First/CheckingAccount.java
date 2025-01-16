@@ -14,7 +14,7 @@ public class CheckingAccount extends Account {
     }
 
     public void setCredit(double credit) {
-        if (credit > 0) {
+        if (credit >= 0) {
             this.credit = credit;
         } else {
             System.out.println("Input number must be a positive integer.");
@@ -27,19 +27,19 @@ public class CheckingAccount extends Account {
 
     @Override
     public void withdraw(double a) {
-        if (a < 0) {
+        if (a <= 0) {
             System.out.println("Input number must be a positive integer.");
             return;
         }
 
-        if ((this.balance - a) >= 0) {
-            this.balance -= a;
-            System.out.println(a + " baht is withdrawn from " + name + " and your credit balance is " + credit);
-        } else if (((this.balance - a) < 0) && ((this.balance - a + this.credit) >= 0)) {
-            setBalance(0);
-            setCredit(this.credit + (this.balance - a));
-            System.out.println(a + " baht is withdrawn from " + name + " and your credit balance is " + credit);
-        } else if (((this.balance - a) < 0) && ((this.balance - a + this.credit) < 0)) {
+        if (balance - a >= 0) {
+            this.setBalance(getBalance() - a);
+            System.out.println(a + " baht is withdrawn from " + name + " and your credit balance is " + credit + ".");
+        } else if ((balance - a < 0) && (balance - a + credit >= 0)) {
+            setCredit(credit + (balance - a));
+            this.setBalance(0);
+            System.out.println(a + " baht is withdrawn from " + name + " and your credit balance is " + credit + ".");
+        } else if ((balance - a < 0) && (balance - a + credit < 0)) {
             System.out.println("Not enough money!");
         }
     }

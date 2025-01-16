@@ -10,6 +10,14 @@ public abstract class Vehicle implements Dieselable {
     public Vehicle(double fuel) {
         this.fuel = fuel;
     }
+    
+    public double getFuel() {
+        return fuel;
+    }
+    
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
 
     public void addFuel(double fuel) {
         if (fuel > 0) {

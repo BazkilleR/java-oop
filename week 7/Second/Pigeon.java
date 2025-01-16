@@ -15,11 +15,13 @@ public class Pigeon extends Bird {
 
     public void eat(String food) {
         switch (food) {
-            case "worm" ->
+            case "worm":
                 setWeight(getWeight() + 0.5);
-            case "seed" ->
+                break;
+            case "seed":
                 setWeight(getWeight() + 0.2);
-            default ->
+                break;
+            default:
                 System.out.println("Pigeon can eat only worm and seed.");
         }
     }

@@ -35,7 +35,7 @@ public class Customer {
         return this.lastName;
     }
 
-    public void Acct(CheckingAccount acct) {
+    public void setAcct(CheckingAccount acct) {
         this.acct = acct;
     }
 
@@ -46,7 +46,7 @@ public class Customer {
     @Override
     public String toString() {
         if (this.acct == null) {
-            return this.firstName + " " + this.lastName + " doesn't have an account.";
+            return this.firstName + " " + this.lastName + " doesn’t have account.";
         } else {
             return "The " + this.firstName + " account has " + acct.getBalance() + " baht and " + acct.getCredit() + " credits.";
         }

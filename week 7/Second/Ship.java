@@ -13,7 +13,7 @@ public class Ship extends Vehicle implements Floatable {
     public void fl0at() {
         if (fuel >= 50) {
             this.fuel -= 50;
-            System.out.println("Ship move");
+            System.out.println("Ship moves");
         } else {
             System.out.println("Fuel is not enough.");
         }
@@ -36,7 +36,7 @@ public class Ship extends Vehicle implements Floatable {
 
     @Override
     public void honk() {
-        System.out.println("Shhhh");
+        System.out.println("Shhhhh");
     }
 
     public void move() {
